@@ -4,7 +4,7 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'menuprincipal_wiki.html') 
 
-def login(request):
+def registro(request):
     return render(request, 'registrase_wiki.html')
 
 def recupero_contra(request):
