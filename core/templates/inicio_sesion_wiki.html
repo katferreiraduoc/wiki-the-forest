@@ -92,7 +92,7 @@
                       <input type="password" value="FakePSW" id="myInput" class="form-control bg-dark-x border-0 mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1" 
                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required style="background-color: #ffffff;">
                       <input type="checkbox" onclick="myFunction()"> Mostrar Contraseña
-                      <a href="recuperarcontra.html" id="emailHelp" class="form-text text-muted text-decoration-none">  ¿Has olvidado tu contraseña?</a>                     
+                      <a href="{% url 'recuperar_contra' %}" id="emailHelp" class="form-text text-muted text-decoration-none">  ¿Has olvidado tu contraseña?</a>                     
                     </div>
                     <a href="menuprincipal_wiki.html" class="button">Iniciar sesion</a>
 
