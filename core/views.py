@@ -16,5 +16,24 @@ def cuenta(request):
 def lugares(request):
     return render(request, 'Lugarestf.html')
 
+
+
+
+
+
 def animales(request):
     return render(request, 'Animales.html')
+
+def armas(request):
+    return render(request, 'Armas.html')
+
+def construcciones(request):
+    return render(request, 'Construcciones.html')
+
+def consumibles(request):
+    return render(request, 'Consumibles.html')
+
+def enemigos(request):
+    return render(request, 'Enemigos.html')
+
+
