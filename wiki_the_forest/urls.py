@@ -17,8 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, recupero_contra, cuenta, lugares, animales, armas, consumibles, enemigos, construcciones
-
+from core.views import index, registro, recupero_contra, cuenta, lugares, animales, armas, consumibles, enemigos, construcciones, inicio_sesion,foro
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
@@ -26,13 +25,15 @@ urlpatterns = [
     path('recuperar_contra/', recupero_contra, name="recuperar_contra"),
     path('cuenta/', cuenta, name="cuenta"),
     path('lugares/', lugares, name="lugares"),
-    
+
     path('animales/', animales, name='animales'),
     path('armas/', armas, name='armas'),
     path('construcciones/', construcciones, name='construcciones'),
     path('consumibles/', consumibles, name='consumibles'),
-    path('enemigos/', enemigos, name='enemigos')
+    path('enemigos/', enemigos, name='enemigos'),
     
+    path('inicio_sesion/', inicio_sesion, name='inicio_sesion'),
+    path('foro/', foro, name='foro'),
     
     
 ]

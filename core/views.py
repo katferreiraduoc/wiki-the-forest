@@ -37,3 +37,9 @@ def enemigos(request):
     return render(request, 'Enemigos.html')
 
 
+
+def inicio_sesion(request):
+    return render(request, 'inicio_sesion_wiki.html')
+
+def foro(request):
+    return render(request, 'forowiki.html')
