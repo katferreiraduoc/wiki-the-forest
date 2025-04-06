@@ -15,3 +15,6 @@ def cuenta(request):
 
 def lugares(request):
     return render(request, 'Lugarestf.html')
+
+def animales(request):
+    return render(request, 'Animales.html')
