@@ -35,5 +35,9 @@ urlpatterns = [
     path('inicio_sesion/', inicio_sesion, name='inicio_sesion'),
     path('foro/', foro, name='foro'),
     
-    
+    path('flora/',Flora, name='Flora'),
+    path('forowiki/',forowiki, name='forowiki'),
+    path('historia/',historia, name='historia'),
+    path('logros/',logros, name='logros'),
+    path('iniciosesion/',iniciosesion, name='iniciosesion'),
 ]

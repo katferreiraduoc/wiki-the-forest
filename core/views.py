@@ -43,3 +43,18 @@ def inicio_sesion(request):
 
 def foro(request):
     return render(request, 'forowiki.html')
+
+def flora (request):
+    return render(request, 'flora.html')
+
+def logros (request):
+    return render(request, 'logros.html')
+
+def historia (request):
+    return render(request, 'historia.html')
+
+def forowiki (request):
+    return render(request, 'forowiki.html')
+
+def iniciosesion (request):
+    return render(request, 'inicio_sesion_wiki.html')

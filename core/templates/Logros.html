@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
-    <link rel=stylesheet href="Logros.css" />
+    <link rel=stylesheet href="{% static 'css/css_templates/Logros.css' %}" />
 
 
 </head>
@@ -19,29 +19,29 @@
 <body id=fondo>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         
-        <a class="navbar-brand" href="menuprincipal_wiki.html" id="fuente">The Forest Wiki</a>
+        <a class="navbar-brand" href="{% url 'menuprincipal_wiki.html' %}" id="fuente">The Forest Wiki</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="menuprincipal_wiki.html">Inicio</a>
+                <a class="nav-link" href="{% url 'menuprincipal_wiki.html' %}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="forowiki.html">Foro</a>
+                <a class="nav-link" href="{% url 'forowiki.html' %}">Foro</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://www.google.com/maps/place/R%C3%ADo+Imperial+460,+Valle+Grande,+Lampa,+Regi%C3%B3n+Metropolitana/@-33.3295809,-70.751195,17z/data=!3m1!4b1!4m5!3m4!1s0x9662bf62531dc747:0xc0b4aee73c3b9373!8m2!3d-33.3295854!4d-70.7490063?hl=es-CL">Dirección</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="registrase_wiki.html">Registrarse</a>
+                  <a class="nav-link" href="{% url 'registrase_wiki.html' %}">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="inicio_sesion_wiki.html">Iniciar sesion</a>
+                  <a class="nav-link" href="{% url 'inicio_sesion_wiki.html' %}">Iniciar sesion</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="micuentatf.html">Mi Cuenta</a>
+                  <a class="nav-link" href="{% url 'micuentatf.html' %}">Mi Cuenta</a>
                 </li>
           </ul>
           <form class="d-flex" id="separar-derecha">
@@ -104,7 +104,7 @@
                                 <p class="center-titulo">1</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Be_Nice.webp" alt="" class="imagen img-fluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Be_Nice.webp' %}" alt="" class="imagen img-fluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Se bueno</p>
@@ -118,7 +118,7 @@
                                 <p class="center-titulo">2</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Be_Extremely_Nice.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Be_Extremely_Nice.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Ser extremadamente agradable</p>
@@ -132,7 +132,7 @@
                                 <p class="center-titulo">3</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/First_Responder.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/First_Responder.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Primer respondedor</p>
@@ -146,7 +146,7 @@
                                 <p class="center-titulo">4</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Medic.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Medic.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Medico</p>
@@ -160,7 +160,7 @@
                                 <p class="center-titulo">5</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Camp_Out.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Camp_Out.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Acampar</p>
@@ -174,7 +174,7 @@
                                 <p class="center-titulo">6</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Minor_Cannibalism.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Minor_Cannibalism.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Canibalismo menor</p>
@@ -188,7 +188,7 @@
                                 <p class="center-titulo">7</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Major_Cannibalism.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Major_Cannibalism.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Canibalismo mayor</p>
@@ -202,7 +202,7 @@
                                 <p class="center-titulo">8</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Trophy_Hunter.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Trophy_Hunter.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Cazador de trofeos</p>
@@ -216,7 +216,7 @@
                                 <p class="center-titulo">9</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Splatter.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Splatter.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Salpicar</p>
@@ -230,7 +230,7 @@
                                 <p class="center-titulo">10</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Choppy_Chop.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Choppy_Chop.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Chuleta picada</p>
@@ -244,7 +244,7 @@
                                 <p class="center-titulo">11</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Commercial_Fisherman.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Commercial_Fisherman.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Pescador comercial</p>
@@ -258,7 +258,7 @@
                                 <p class="center-titulo">12</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Serial_Killer.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Serial_Killer.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Asesino en serie</p>
@@ -272,7 +272,7 @@
                                 <p class="center-titulo">13</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/bite_me.jpg" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/bite_me.jpg' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">¡Muérdeme!</p>
@@ -286,7 +286,7 @@
                                 <p class="center-titulo">14</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Monster.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Monster.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Monstruo</p>
@@ -300,7 +300,7 @@
                                 <p class="center-titulo">15</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Birdseye.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Birdseye.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Ojo de pájaro</p>
@@ -314,7 +314,7 @@
                                 <p class="center-titulo">16</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Fisherman.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Fisherman.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Pescador</p>
@@ -328,7 +328,7 @@
                                 <p class="center-titulo">17</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Green_Thumb.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Green_Thumb.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Pulgar verde</p>
@@ -342,7 +342,7 @@
                                 <p class="center-titulo">18</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Naturopath.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Naturopath.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Naturopata</p>
@@ -356,7 +356,7 @@
                                 <p class="center-titulo">19</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Gabe_Fan.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Gabe_Fan.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Fan de Gabe</p>
@@ -370,7 +370,7 @@
                                 <p class="center-titulo">20</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Unseen.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Unseen.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Invisible</p>
@@ -384,7 +384,7 @@
                                 <p class="center-titulo">21</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Longest_Wall.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Longest_Wall.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Muro mas larga</p>
@@ -398,7 +398,7 @@
                                 <p class="center-titulo">22</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Demolition_Man_.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Demolition_Man_.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Hombre de demolicion</p>
@@ -412,7 +412,7 @@
                                 <p class="center-titulo">23</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Demolition_Expert.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Demolition_Expert.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Experto en demoliciones</p>
@@ -426,7 +426,7 @@
                                 <p class="center-titulo">24</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Boy_Scout.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Boy_Scout.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Boy scout</p>
@@ -440,7 +440,7 @@
                                 <p class="center-titulo">25</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Handyman.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Handyman.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Personal de mantenimiento</p>
@@ -454,7 +454,7 @@
                                 <p class="center-titulo">26</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Climate_Change.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Climate_Change.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Cambio climático</p>
@@ -468,7 +468,7 @@
                                 <p class="center-titulo">27</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/dont_save_the_forest.jpg" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/dont_save_the_forest.jpg' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">No salvemos el bosque</p>
@@ -482,7 +482,7 @@
                                 <p class="center-titulo">28</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Crafty.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Crafty.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Astuto</p>
@@ -496,7 +496,7 @@
                                 <p class="center-titulo">29</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Good_Father.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Good_Father.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Buen padre</p>
@@ -510,7 +510,7 @@
                                 <p class="center-titulo">30</p>
                             </div>
                             <div class="col-sm-2 border border-secondary fondo-tabla center">
-                                <p class="center-titulo"><img src="imagenes/Logros/Vegan.webp" alt="" class="imagen imgfluid"></p>
+                                <p class="center-titulo"><img src="{% static 'imagenes/Logros/Vegan.webp' %}" alt="" class="imagen imgfluid"></p>
                             </div>
                             <div class="col-sm-3 border border-secondary fondo-tabla center">
                                 <p class="center-titulo">Vegano</p>
