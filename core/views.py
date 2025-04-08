@@ -16,11 +16,6 @@ def cuenta(request):
 def lugares(request):
     return render(request, 'Lugarestf.html')
 
-
-
-
-
-
 def animales(request):
     return render(request, 'Animales.html')
 
@@ -36,25 +31,23 @@ def consumibles(request):
 def enemigos(request):
     return render(request, 'Enemigos.html')
 
-
-
 def inicio_sesion(request):
     return render(request, 'inicio_sesion_wiki.html')
 
 def foro(request):
     return render(request, 'forowiki.html')
 
-def flora (request):
-    return render(request, 'flora.html')
+def flora(request):
+    return render(request, 'Flora.html')
 
-def logros (request):
-    return render(request, 'logros.html')
+def logros(request):
+    return render(request, 'Logros.html')
 
-def historia (request):
+def historia(request):
     return render(request, 'historia.html')
 
-def forowiki (request):
+def forowiki(request):
     return render(request, 'forowiki.html')
 
-def iniciosesion (request):
+def iniciosesion(request):
     return render(request, 'inicio_sesion_wiki.html')
