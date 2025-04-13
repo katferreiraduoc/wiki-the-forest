@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'wiki_the_forest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'bdcloud_high', # MODIFICAR         
+        'USER': '', # AGREGA TU USER Y PASS
+        'PASSWORD': '', # AGREGA TU USER Y PASS
+        'HOST': '',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

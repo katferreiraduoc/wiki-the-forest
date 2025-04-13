@@ -84,23 +84,27 @@
                 </div>
                 <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
                 <h1 class="font-weight-bold mb-4" id="subir">Ingrese sus Datos</h1>
-                <form class="mb-5">
+                <form method="post" action="{% url 'registro' %}" class="mb-5">
+                  {% csrf_token %}
+                  {% if error %}
+                    <div class="mb-4 alert-danger">{{ error }}</div>
+                  {% endif %}
                     <div class="mb-4">
                       <label for="exampleInputEmail1" class="form-label font-weight-bold">Email</label>
-                      <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="nombre@ejemplo.com" aria-describedby="emailHelp" style="background-color: #ffffff;">
+                      <input type="email" name="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="nombre@ejemplo.com" aria-describedby="emailHelp" style="background-color: #ffffff;">
                     </div>
                     <div class="mb-4">
                       <label for="exampleInputEmail1" class="form-label font-weight-bold">Contraseña</label>
-                      <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Ingrese su contraseña" aria-describedby="emailHelp" style="background-color: #ffffff;">
+                      <input type="password" name="password" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Ingrese su contraseña" aria-describedby="emailHelp" style="background-color: #ffffff;">
 
                     </div>
                     <div class="mb-4">
                       <label for="exampleInputEmail1" class="form-label font-weight-bold">Confirme su contraseña</label>
-                      <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Vuelva a ingresar su contraseña" aria-describedby="emailHelp" style="background-color: #ffffff;">
+                      <input type="password" name="confirmar_pass" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Vuelva a ingresar su contraseña" aria-describedby="emailHelp" style="background-color: #ffffff;">
 
                     </div>
-                      <a href="/" class="button">Crear cuenta</a>
-                   
+                    <button type="submit" class="button">Crear cuenta</button>
+
                     
                     
                   </form>

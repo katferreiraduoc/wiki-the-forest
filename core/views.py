@@ -1,10 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Usuario
 
-# Create your views here.
 def index(request):
     return render(request, 'menuprincipal_wiki.html') 
 
 def registro(request):
+    if request.method == 'POST':
+        correo = request.POST.get('email')
+        password = request.POST.get('password')
+        confirmar = request.POST.get('confirmar_pass')
+
+        if password != confirmar:
+            return render(request, 'registrase_wiki.html', {
+                'error': 'Las contraseñas no coinciden'
+            })
+
+        Usuario.objects.create(
+            correo=correo,
+            password=password
+        )
+
+        return redirect('iniciosesion')
+
     return render(request, 'registrase_wiki.html')
 
 def recupero_contra(request):
