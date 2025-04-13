@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Usuario
+from .models import Usuario, Rol
 
 def index(request):
     return render(request, 'menuprincipal_wiki.html') 
@@ -9,6 +9,8 @@ def registro(request):
         correo = request.POST.get('email')
         password = request.POST.get('password')
         confirmar = request.POST.get('confirmar_pass')
+        rol_id = request.POST['rol']
+        rol = Rol.objects.get(id=rol_id)
 
         if password != confirmar:
             return render(request, 'registrase_wiki.html', {
@@ -17,12 +19,13 @@ def registro(request):
 
         Usuario.objects.create(
             correo=correo,
-            password=password
+            password=password,
+            rol=rol
         )
 
         return redirect('iniciosesion')
-
-    return render(request, 'registrase_wiki.html')
+    roles = Rol.objects.all()
+    return render(request, 'registrase_wiki.html', {'roles': roles})
 
 def recupero_contra(request):
     return render(request, 'recuperarcontra.html')
