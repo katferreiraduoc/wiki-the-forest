@@ -1,16 +1,10 @@
+from django.contrib.auth.models import User as DjangoUser
 from django.db import models
 
-class Rol(models.Model):
-    nombre = models.CharField(max_length=50)
+class User(models.Model):
+    user = models.OneToOneField(DjangoUser, on_delete=models.CASCADE)
+    foto = models.ImageField(upload_to='fotos_perfil/', blank=True, null=True)
+    is_admin = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.nombre
-
-class Usuario(models.Model):
-    correo = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
-    rol = models.ForeignKey(Rol, on_delete=models.CASCADE, default=1, db_column='rol_id')
-
-
-    def __str__(self):
-        return self.correo
+        return self.user.username

@@ -22,35 +22,45 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         
       <a class="navbar-brand" href="{% url 'index' %}" id="fuente">The Forest Wiki</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'foro' %}">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/maps/place/R%C3%ADo+Imperial+460,+Valle+Grande,+Lampa,+Regi%C3%B3n+Metropolitana/@-33.3295809,-70.751195,17z/data=!3m1!4b1!4m5!3m4!1s0x9662bf62531dc747:0xc0b4aee73c3b9373!8m2!3d-33.3295854!4d-70.7490063?hl=es-CL">Dirección</a>
+          </li>
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            {% else %}
+              <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+            {% endif %}
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'foro' %}">Foro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.google.com/maps/place/R%C3%ADo+Imperial+460,+Valle+Grande,+Lampa,+Regi%C3%B3n+Metropolitana/@-33.3295809,-70.751195,17z/data=!3m1!4b1!4m5!3m4!1s0x9662bf62531dc747:0xc0b4aee73c3b9373!8m2!3d-33.3295854!4d-70.7490063?hl=es-CL">Dirección</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'inicio_sesion' %}">Iniciar sesion</a>
-              </li>
-              <li class="nav-item">
+              {% if user.is_authenticated %}
                 <a class="nav-link" href="{% url 'cuenta' %}">Mi Cuenta</a>
-              </li>
-          </ul>
-          <form class="d-flex" id="separarsearch" >
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-        </div>
+              {% else %}
+              {% endif %}
+            </li>
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+            {% else %}
+              <a class="nav-link" href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
+            {% endif %}
+            </li>
+        </ul>
+        <form class="d-flex" id="separarsearch" >
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
     
   </nav>
       <section>
@@ -84,20 +94,22 @@
                 </div>
                 <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
                 <h1 class="font-weight-bold mb-4" id="subir">Bienvenido Ingresa tu Usuario</h1>
-                <form class="mb-5">
+                <form method="POST" class="mb-5">
+                  {% csrf_token %}
                     <div class="mb-4">
-                      <label for="exampleInputEmail1" class="form-label font-weight-bold">Email</label>
-                      <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="I" aria-describedby="emailHelp" style="background-color: #ffffff;">
+                      <label for="username" class="form-label font-weight-bold">Nombre Usuario</label>
+                      <input type="text" class="form-control bg-dark-x border-0" id="username" name="username" placeholder="Nombre Usuario" aria-describedby="emailHelp" style="background-color: #ffffff;">
                     </div>
                     <div class="mb-4">
-                      <label for="exampleInputPassword1" class="form-label font-weight-bold">Contraseña</label>
-                      <input type="password" value="FakePSW" id="myInput" class="form-control bg-dark-x border-0 mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1" 
-                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required style="background-color: #ffffff;">
+                      <label for="password" class="form-label font-weight-bold">Contraseña</label>
+                      <input type="password" id="password" name="password" class="form-control bg-dark-x border-0 mb-2" placeholder="Ingresa tu contraseña" required style="background-color: #ffffff;">
                       <input type="checkbox" onclick="myFunction()"> Mostrar Contraseña
                       <a href="{% url 'recuperar_contra' %}" id="emailHelp" class="form-text text-muted text-decoration-none">  ¿Has olvidado tu contraseña?</a>                     
                     </div>
-                    <a href="{% url 'index' %}" class="button">Iniciar sesion</a>
-
+                    <button type="submit" class="button">Iniciar sesion</button>
+                    {% if error %}
+                      <p style="color: red;">{{ error }}</p>
+                    {% endif %}
                   </form>
 
 
@@ -117,7 +129,7 @@
 
 <script>
 function myFunction() {
-  var x = document.getElementById("myInput");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {

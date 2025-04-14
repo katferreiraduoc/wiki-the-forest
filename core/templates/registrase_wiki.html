@@ -22,35 +22,45 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         
       <a class="navbar-brand" href="{% url 'index' %}" id="fuente">The Forest Wiki</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'foro' %}">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/maps/place/R%C3%ADo+Imperial+460,+Valle+Grande,+Lampa,+Regi%C3%B3n+Metropolitana/@-33.3295809,-70.751195,17z/data=!3m1!4b1!4m5!3m4!1s0x9662bf62531dc747:0xc0b4aee73c3b9373!8m2!3d-33.3295854!4d-70.7490063?hl=es-CL">Dirección</a>
+          </li>
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            {% else %}
+              <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+            {% endif %}
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'foro' %}">Foro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.google.com/maps/place/R%C3%ADo+Imperial+460,+Valle+Grande,+Lampa,+Regi%C3%B3n+Metropolitana/@-33.3295809,-70.751195,17z/data=!3m1!4b1!4m5!3m4!1s0x9662bf62531dc747:0xc0b4aee73c3b9373!8m2!3d-33.3295854!4d-70.7490063?hl=es-CL">Dirección</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'inicio_sesion' %}">Iniciar sesion</a>
-              </li>
-              <li class="nav-item">
+              {% if user.is_authenticated %}
                 <a class="nav-link" href="{% url 'cuenta' %}">Mi Cuenta</a>
-              </li>
-          </ul>
-          <form class="d-flex" id="separarsearch" >
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-        </div>
+              {% else %}
+              {% endif %}
+            </li>
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+            {% else %}
+              <a class="nav-link" href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
+            {% endif %}
+            </li>
+        </ul>
+        <form class="d-flex" id="separarsearch" >
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
     
   </nav>
       <section>
@@ -86,9 +96,10 @@
                 <h1 class="font-weight-bold mb-4" id="subir">Ingrese sus Datos</h1>
                 <form method="post" action="{% url 'registro' %}" class="mb-5">
                   {% csrf_token %}
-                  {% if error %}
-                    <div class="mb-4 alert-danger">{{ error }}</div>
-                  {% endif %}
+                  <div class="mb-4">
+                    <label for="username" class="form-label font-weight-bold">Nombre Usuario</label>
+                    <input type="text" name="username" class="form-control bg-dark-x border-0" id="username" placeholder="Nombre Usuario" aria-describedby="emailHelp" style="background-color: #ffffff;">
+                  </div>
                     <div class="mb-4">
                       <label for="exampleInputEmail1" class="form-label font-weight-bold">Email</label>
                       <input type="email" name="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="nombre@ejemplo.com" aria-describedby="emailHelp" style="background-color: #ffffff;">
@@ -103,16 +114,15 @@
                       <input type="password" name="confirmar_pass" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Vuelva a ingresar su contraseña" aria-describedby="emailHelp" style="background-color: #ffffff;">
 
                     </div>
-                    <div class="mb-4">
-                      <label class="form-label font-weight-bold" for="rol">Rol:</label>
-                      <select name="rol" required>
-                        {% for r in roles %}
-                          <option value="{{ r.id }}">{{ r.nombre }}</option>
-                        {% endfor %}
-                      </select><br>
-                    </div>
                     <button type="submit" class="button">Crear cuenta</button>
                   </form>
+                  {% if messages %}
+                    <ul>
+                      {% for message in messages %}
+                        <li>{{ message }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
                 </div>
             </div>
         </div>

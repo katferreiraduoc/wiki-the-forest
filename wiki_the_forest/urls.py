@@ -17,14 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, recupero_contra, cuenta, lugares, animales, armas, consumibles, enemigos, construcciones, inicio_sesion,foro, flora, forowiki, historia, logros, iniciosesion
+from core.views import index, pagina_admin, registro, recupero_contra, cuenta, editar_cuenta, lugares, animales, armas, consumibles, enemigos, construcciones, inicio_sesion,foro, flora, forowiki, historia, logros, cerrar_sesion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('pagina_admin/', pagina_admin, name="pagina_admin"),
     path('registro/', registro, name="registro"),
     path('recuperar_contra/', recupero_contra, name="recuperar_contra"),
     path('cuenta/', cuenta, name="cuenta"),
+    path('editar_cuenta/', editar_cuenta, name="editar_cuenta"),
     path('lugares/', lugares, name="lugares"),
     path('animales/', animales, name='animales'),
     path('armas/', armas, name='armas'),
@@ -37,5 +39,10 @@ urlpatterns = [
     path('forowiki/',forowiki, name='forowiki'),
     path('historia/',historia, name='historia'),
     path('logros/',logros, name='logros'),
-    path('iniciosesion/',iniciosesion, name='iniciosesion'),
+    path('logout/', cerrar_sesion, name='logout'),
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
