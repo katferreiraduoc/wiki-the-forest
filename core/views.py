@@ -74,21 +74,27 @@ def editar_cuenta(request):
         'perfil': perfil
     })
 
+@login_required(login_url='inicio_sesion')
 def lugares(request):
     return render(request, 'Lugarestf.html')
 
+@login_required(login_url='inicio_sesion')
 def animales(request):
     return render(request, 'Animales.html')
 
+@login_required(login_url='inicio_sesion')
 def armas(request):
     return render(request, 'Armas.html')
 
+@login_required(login_url='inicio_sesion')
 def construcciones(request):
     return render(request, 'Construcciones.html')
 
+@login_required(login_url='inicio_sesion')
 def consumibles(request):
     return render(request, 'Consumibles.html')
 
+@login_required(login_url='inicio_sesion')
 def enemigos(request):
     return render(request, 'Enemigos.html')
 
@@ -109,17 +115,22 @@ def cerrar_sesion(request):
     logout(request)
     return redirect('inicio_sesion')
 
+@login_required(login_url='inicio_sesion')
 def foro(request):
     return render(request, 'forowiki.html')
 
+@login_required(login_url='inicio_sesion')
 def flora(request):
     return render(request, 'Flora.html')
 
+@login_required(login_url='inicio_sesion')
 def logros(request):
     return render(request, 'Logros.html')
 
+@login_required(login_url='inicio_sesion')
 def historia(request):
     return render(request, 'historia.html')
 
+@login_required(login_url='inicio_sesion')
 def forowiki(request):
     return render(request, 'forowiki.html')
